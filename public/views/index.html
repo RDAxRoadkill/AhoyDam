@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Manifesto Overvecht</title>
+
+    <!-- Stylesheets -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+    <!-- Libary Scripts -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="../../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- controllers -->
+    <script src="/app/users/userListCtrl.js"></script>
+    <!-- <script src="/app/concerten/concertCtrl.js"></script> -->
+ 
+
+</head>
+<body ng-app="usersManagement">
+<nav class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+                data-toggle="collapse" data-target="#example-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#/home"><img src="../images/logo/logo.png " style="margin-top:-18px;"></span></a>
+    </div>
+    <div class="headercontainer">
+        <div class="headerbuttons">
+            <a class="btn btn-default" href="#" role="button">Bereik ons</a>
+            <a class="btn btn-default" href="#" role="button">Schrijf je in</a>
+            <a class="btn btn-default" href="#/login" role="button">Login</a>
+            <a class="btn btn-default" href="#/registreren" role="button">Registreren</a>
+        </div>
+        <div class="headerflags">
+            <a href="#">Nederlands</a>
+            <a href="#">Engels</a>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <div  class="navcontainer">
+        <ul class="nav navbar-nav">
+            <!-- Drop down might need changes to onHover -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Agenda
+                    <b class="caret"></b><!-- caret = driekhoek -->
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a ui-sref="agenda">Agenda</a></li>
+                    <li class="divider"></li>
+                    <li><a ui-sref="addUser">Add User</a></li>
+                </ul>
+
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Ontdek Ahoy
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu"></ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Over Ons
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu"></ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Business
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu"></ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Nieuws
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu"></ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Concerten
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/addConcert">Concert aanmaken</a></li>
+                </ul>
+            </li>
+
+        </ul>
+        </div>
+    </div>
+
+</nav>
+<div ui-view>
+
+</div>
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+        <h4>OVER ONS</h4>
+        <p class="footer-content">
+            <a href="#">Wij zijn Rotterdam Ahoy</a>
+            <a href="#">Ons verhaal</a>
+            <a href="#">Werlem bij Ahoy</a>
+            <a href="#">Rotterdam Ahoy organiseert</a>
+            <a href="#">Partners</a>
+            <a href="#">Vervoer & Route</a>
+            <a href="#">Contact</a>
+            <a href="#">Jouw & onze veiligheid</a>
+            <a href="#">FAQ</a>
+        </p>
+    </div>
+    <div class="footer-center">
+        <h4>QUICK LINKS</h4>
+        <p class="footer-content">
+            <a href="#">Drinks & Bites</a>
+            <a href="#">Huisregelement</a>
+            <a href="#">Wet- en Regelgeving</a>
+        </p>
+    </div>
+    <div class="footer-right">
+        <h4>KEEP IN TOUCH</h4>
+        <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+        <p class="footer-content">
+            <a href="#">Privacy en Cookies</a>
+            <a href="#">Disclaimer</a>
+        </p>
+
+    </div>
+</footer>
+</body>
+</html>

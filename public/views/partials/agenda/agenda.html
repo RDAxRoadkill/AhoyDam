@@ -1,0 +1,11 @@
+<div class="container">
+
+    <div ng-repeat="agenda in ctrl.agenda" class="agenda-item row-fluid">
+        <div CLASS="span4" ;> {{agenda.naam}}</div>
+        <div CLASS="span4"> Artiest:{{agenda.artiest}} </div> <div class="span4">Genre:{{agenda.genre}}</div>
+        <p> Begin datum: {{agenda.beginDatum}}</p>
+        {{agenda.id}}+{{agenda.naam}}+{{agenda.beginDatum}}+{{agenda.eindDatum}}+{{agenda.artiets}}+{{agenda.genre}}+{{agenda.zaal}}
+    </div>
+
+
+</div>

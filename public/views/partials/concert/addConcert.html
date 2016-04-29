@@ -1,0 +1,47 @@
+<h3>Voeg concert toe!</h3>
+
+<!--   
+idOptreden  (auto)
+artiest     (via artiesten)(dropdown?)
+optredendatum
+evenementtype
+kaartenverkoopeinddatum
+beschikbarekaarten  
+bestelling     (via bestelling zelf (?))
+ticketprijs -->
+<body>
+    <div class ="container">
+        <form action="/newConcert" method="post">
+            <div class="form-group">
+                <label for="artiest">Artiest:  </label> 
+                <input type="text" name="artiest" class="form-control" placeholder="artiest"><br>
+            </div>
+            <div class="form-group">
+                <label for="optredenDatum">Optreden datum:</label>
+                <input type="date" class="form-control" name="optredenDatum" placeholder="email"><br>
+            </div>
+            <div class="form-group">
+                <label for="beginTijd">Begin tijd:</label>
+                <input type="time" class="form-control" name="beginTijd" placeholder="beginTijd"><br>
+            </div>
+            <div class="form-group">
+                <label for="eindTijd">Eind tijd:</label>
+                <input type="time" class="form-control" name="eindTijd" placeholder="eindTijd"><br>
+            </div>
+            <div class="form-group">
+                <label for="kaartEind">Kaart verkoop eind datum:   </label>
+                <input type="date" name="kaartEind" class="form-control" placeholder="Kaart verkoop eind datum"><br>
+            </div>
+            <div class="form-group">
+                <label for="totaalKaart">Totaal aantal kaarten: </label>
+                <input type="number" name="totaalKaart" class="form-control" placeholder="Totaal aantal kaarten"><br>
+            </div>
+            <div class="form-group">
+                <label for="ticketPrijs">Ticketprijs:    </label>  
+                <input type="number" step=0.01 name="ticketPrijs" class="form-control" placeholder="ticketPrijs"><br>
+            </div>
+            <input type="submit" class="btn btn-default" name="Submit"> 
+    </form>
+</div>
+
+</body>

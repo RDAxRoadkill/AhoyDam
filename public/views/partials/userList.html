@@ -1,0 +1,74 @@
+<div class="container">
+    <form action="/newUser" method="post" name="addUserForm">
+        <table class="table" >
+            <thead class="thead-inverse">
+            <tr>
+                <td>
+                    <button type="button"
+                            class="btn btn-primary"
+                            ng-click="ctrl.fotoAanUit()">
+                        {{ctrl.foto? "Verberg":"Toon"}} Foto
+                    </button>
+                </td>
+                <td scope="row">ID</td>
+                <td>Voornaam</td>
+                <td>Email</td>
+                <td>Wachtwoord</td>
+                <td>Telefoon</td>
+                <td>Woonplaats</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in ctrl.users">
+                <td><img ng-show="ctrl.foto"
+                         ng-src="{{user.image}}"
+                         style="width: 110px; height: 94px;"
+                         class="img-thumbnail"
+                         title="{{user.username}}"></td>
+                <th scope="row">{{user.id}}</th>
+                <td>{{user.voornaam}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.wachtwoord}}</td>
+                <td>{{user.telefoon}}</td>
+                <td>{{user.woonplaats}}</td>
+            </tr>
+            </tbody>
+            <thead class="thead-inverse">
+            <th>Images</th>
+            <th>Voornaam</th>
+            <th>Email</th>
+            <th>Wachtwoord</th>
+            <th>Telefoon</th>
+            <th>Woonplaats</th>
+            <th>Submit</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <select name="image">
+                        <option value="./images/maurits.png">Maurits</option>
+                        <option value="./images/brandon.png">Brandon</option>
+                        <option value="./images/ruben.png">Ruben</option>
+                        <option value="./images/wouter.png">Wouter</option>
+                        <option value="./images/robin.png">Robin</option>
+                        <option value="./images/kevin.png">Kevin</option>
+                        <option value="./images/reinier.png">Reinier</option>
+                        <option value="./images/furgil.png">Furgil</option>
+                    </select>
+                </td>
+                <td><input type="text" name="voornaam" placeholder="Voornaam" required></td>
+                <td><input type="email" name="email" placeholder="mail@mail.com" required></td>
+                <td><input type="password" name="wachtwoord" placeholder="wachtwoord" required></td>
+                <td><input type="text" name="telefoon" value="+316 12 345 678" ui-minLength="10" ui-maxLength="11"></br>
+                    <p class="help-block" ng-if="addUserForm.telefoon.$error.minLength">Minimaal 10 Karakters
+                    <p class="help-block" ng-if="addUserForm.telefoon.$error.maxLength">Maximaal 11 Karakters</p>
+                </td>
+                <td><input type="text" name="woonplaats" placeholder="Woonplaats" required></td>
+                <td>
+                    <button type="submit" class="btn btn-primary">Verzenden</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

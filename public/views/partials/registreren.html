@@ -1,0 +1,43 @@
+<head>
+ <!-- Stylesheets -->
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/main.css" rel="stylesheet">
+    
+    <!-- Library Scripts -->
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-resource/angular-resource.js"></script>
+</head>
+<h3>Registreren</h3>
+    <body>
+        <div class ="container">
+            <form action="/newUser" method="post">
+        <div class="form-group">
+            <label for="voornaam">Voornaam:  </label> 
+            <input type="text" name="Voornaam" class="form-control" placeholder="voornaam"><br>
+        </div>
+        <div class="form-group">
+            <label for="voornaam">Achternaam:  </label> 
+            <input type="text" name="Achternaam" class="form-control" placeholder="achternaam"><br>
+        </div>
+        <div class="form-group">
+            <label for="telefoon">Telefoon:   </label>
+            <input type="text" name="Telefoonnummer" class="form-control" placeholder="telefoon"><br>
+        </div>
+        <div class="form-group">
+            <label for="woonplaats">Woonplaats: </label>
+            <input type="text" name="Woonplaats" class="form-control" placeholder="woonplaats"><br>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email" placeholder="email"><br>
+        </div>
+        <div class="form-group">
+            <label for="image">Wachtwoord:    </label>  
+            <input type="password" name="wachtwoord" class="form-control" placeholder="wachtwoord"><br>
+        </div>
+        <input type="submit" class="btn btn-default" name="Submit"> 
+    </form>
+        </div>
+
+</body>
