@@ -4,13 +4,18 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 
 var app = express();
 
 var port = process.env.PORT || 3000;
 
+//Session test
+//app.engine('html', require('ejs'),renderFile);
+
 //configure
 app.set('views', path.join(__dirname, 'public/views'));
+
 
 //middleware
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')));
@@ -18,8 +23,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
+app.use(session({secret: '123', cookie: {maxAge: 60000}, resave: true, saveUninitialized: true}));
 app.use(express.static(path.join(__dirname,'/public')));
 app.use('/bower_components', express.static(path.join(__dirname,'/bower_components')));
+
 
 app.use(require('./routes'));
 
