@@ -303,54 +303,81 @@ router.post('/selectAgenda', function (req, res) {
     var post = {
         idOptreden: req.body.idOptreden,
         kaarten: req.body.aantalKaarten,
+        naamOptreden: req.body.naamOptreden
     };
    console.log('/Concert gekozen!');
    Bestelling.selectOptreden(post, function(err, callback){
        if(err){
            console.log(err);
        } else {
-           console.log("Gelukt! nog afhandelen!");
-           console.log(callback);
+           console.log("Check tickets!");
+           console.log(post);
+           Bestelling.checkTickets(post, function(err, callback){
+            if(err){
+                console.log(err);
+            } else {
+                console.log("Gelukt! nog afhandelen!");
+                console.log(callback);
+                sess = req.session;
+                sess.kaarten =  req.body.aantalKaarten;
+                sess.naamOptreden =  req.body.naamOptreden;
+                console.log("idOptreden " +sess.idOptreden);
+                console.log("kaarten " +sess.kaarten);
+                console.log("naamOptreden " +sess.naamOptreden);
+                res.redirect('/#/addBestelling');
+            }
+            })
        }
    })
 }); 
-/* //kaarten check
-router.post('/selectAgenda', function (req, res) {
+
+router.get('/addBestelling', function (req, res){
+    console.log("GOTCHA!");
     var post = {
-        idOptreden: req.body.idOptreden,
-        beschikbareKaarten: req.body.beschikbareKaarten,
-        naamOptreden: req.body.naamOptreden,
+        kaarten: sess.kaarten,
+        naamOptreden: sess.naamOptreden
     };
-   console.log('/Kaarten gekozen!');
-   Bestelling.checkTickets(post, function(err, callback){
-       if(err){
-           console.log(err);
-       } else {
-           console.log("Gelukt! nog afhandelen!");
-           console.log(callback);
-       }
-   })
-});*/
+    Bestelling.calcPrijs(post, function(err, resultPrijs){
+        if(err){
+            console.log(err);
+        } else {
+            console.log("Gelukt! nog afhandelen!");
+            console.log(resultPrijs);
+            res.send(resultPrijs);
+        }
+    });
+})
+
 //Bestelling
-router.post('/newBestelling', function (req, res){
+router.post('/newPayment', function (req, res){
+    console.log('/addBestelling gestart!');
     var post = {
-        kaarten: req.body.aantalKaarten,
-        naamConcert: req.body.naamConcert
+        //idOptreden: req.body.idOptreden,
+        kaarten: sess.kaarten,
+        naamOptreden: sess.naamOptreden
     };
-    console.log('Login check geactiveerd');
+    console.log('Sessie waardes zijn, kaarten: ' +sess.kaarten + " en naam optreden is " + sess.naamOptreden);
+    //console.log('Login check geactiveerd');
     //Uitvoeren van login check
-    console.log('Controle aantal tickets vrij');
+    //console.log('Controle aantal tickets vrij');
     //Uitvoeren vrije tickets controle
     console.log('Betaling starten');
-    //Uitvoeren van betaling voltooing, wachten tot deze is voltooid. (vast houden van write?) check ook voor ratRaces, zodra voltooid transactie beginnen
+    Bestelling.calcPrijs(post, function(err, callback){
+        if(err){
+            console.log(err);
+        } else {
+            console.log("Gelukt! nog afhandelen!");
+        }
+    })
+    /*Uitvoeren van betaling voltooing, wachten tot deze is voltooid. (vast houden van write?) check ook voor ratRaces, zodra voltooid transactie beginnen
     console.log('Transactie beginnen');
     console.log('Genereer betaling nummer + inserts in Bestelling');
     console.log('Inserts in OptredenRegel & Inserts om BestellingRegel');
     console.log('Aantal vrije kaartjes min aantal geselecteerde kaartjes');
     console.log('kaart codes genereren');
     console.log('Mail naar klant versturen');
-    //Uitvoeren van inserts
-})
+    //Uitvoeren van inserts*/
+});
 /* Agenda
 router.get('/agenda', function (req, res) {
     console.log('/agenda geactiveerd');
