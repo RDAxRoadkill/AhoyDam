@@ -1,0 +1,33 @@
+<h3>Voeg een Artiest toe!</h3>
+<body>
+    <div class ="container">
+        <form action="/newArtiest" method="post">
+            <div class="form-group">
+                <label for="kaartEind">Artiestnaam:   </label>
+                <input type="text" name="artiestNaam" class="form-control" placeholder="artiest Naam"><br>
+            </div>
+            <div class="form-group"><!-- veranderen naar textarea? -->
+                <label for="artiest">Beschrijving:  </label> 
+                <input type="text" name="beschrijving" class="form-control" placeholder="beschrijving"><br>
+            </div>
+            <div class="form-group">
+                <label for="optredenDatum">Artiest GeluidsFragment:</label>
+                <input type="text" class="form-control" name="artiestGeluidsFragment" placeholder="artiest Geluids Fragment"><br>
+            </div>
+            <div class="form-group">
+                <label for="Evenement type">Artiest Foto:</label>
+                <input type="text" class="form-control" name="artiestFoto" placeholder="artiestFoto"><br>
+            </div>
+            <div class="form-group">
+                <label for="beginTijd">Artiest Verwijzing:</label>
+                <input type="text" class="form-control" name="artiestVerwijzing" placeholder="artiestVerwijzing"><br>
+            </div>
+            <div class="form-group">
+                <label for="eindTijd">Artiest VideoFragment:</label>
+                <input type="text" class="form-control" name="artiestVideoFragment" placeholder="artiestVideoFragment"><br>
+            </div>
+            <input type="submit" class="btn btn-default" name="Submit"> 
+    </form>
+</div>
+
+</body>

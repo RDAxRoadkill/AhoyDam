@@ -1,0 +1,19 @@
+<!-- Ruben z'n magische ticket shit -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+         $('#aantal').on('change',function(){
+            console.log('dis');
+            var totaalaantal = $('#prijspp').val() * $('#aantal').val();
+            totaalaantal = Math.round(totaalaantal * 100) / 100);
+            $('#totalprijs').html( totaalaantal);
+        }) 
+    })
+
+</script>
+<div>
+    <input type="number" name="aantal"id="aantal" value="1">
+    <input type="number" id="prijspp" style="display:none;" value="4.20">
+    <span id="prijs">4.20</span>
+    <span id="totalprijs">4.20</span>
+</div>

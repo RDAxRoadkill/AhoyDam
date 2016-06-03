@@ -1,0 +1,27 @@
+<h3>Voeg een Rol aan een gebruiker toe!</h3>
+<body>
+    <div class ="container">
+        <form action="/GebruikerRol" method="post">
+            <div class="form-group">
+                <label for="Omschrijving">Naam Gebruiker:  </label> 
+               <!--<input type="dropdown" name="idGebruiker" class="form-control" placeholder="Gebruiker Naam"><br> -->
+                <select id="idRol" name="idGebruiker">
+                        <option ng-repeat="user in ctrl.users" value="{{Gebruiker.idGebruiker}}">{{Gebruiker.Voornaam}} {{Gebruiker.Achternaam}}</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                    <label for="Omschrijving">Rol:  </label> 
+                    <select id="idRol" name="idRol">
+                        <option value="1">Klant</option>
+                        <option value="2">Zaalbeheerder</option>
+                        <option value="3">Beheerder</option>
+                        <option value="4">Developer</option>
+                        <option value="5">Tester</option>
+                    </select>
+                
+            </div>
+            <input type="submit" class="btn btn-default" name="Submit"> 
+    </form>
+</div>
+
+</body>

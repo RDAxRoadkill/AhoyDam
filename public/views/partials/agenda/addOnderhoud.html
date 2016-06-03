@@ -1,0 +1,39 @@
+<body>
+    <div class ="container">
+        <h3>Voeg Onderhoud toe!</h3>
+        <form action="/newOnderhoud" method="post">
+            <div class="form-group"><!-- Aanpassen met selectbaar dropdown -->
+                <label for="SpeciaalEvenementType">Evenementen Type:</label>
+                <select id="OnderhoudType" name="OnderhoudType">
+                        <option value="Noodgevallen">Noodgevallen</option>
+                        <option value="Onderhoud Zaal">Onderhoud Zaal</option>
+                        <option value="Verbouwing">Verbouwing</option>
+                        <option value="Controle">Controle Zaal</option>
+                    </select>
+            </div>
+             <div class="form-group">
+                <label for="beschrijvingEvent">Beschrijving Onderhoud:  </label> 
+                <input type="text" name="beschrijving" class="form-control" placeholder="beschrijving"><br>
+            </div>
+            <div class="form-group">
+                <label for="optredenDatum">Datum:</label>
+                <input type="date" class="form-control" name="optredenDatum" placeholder="optredenDatum"><br>
+            </div>
+            <div class="form-group">
+                <label for="begin">Begin tijd:</label>
+                <input type="time" class="form-control" name="begin" placeholder="Begin Tijd"><br>
+            </div>
+            <div class="form-group">
+                <label for="eind">Eind tijd:</label>
+                <input type="time" class="form-control" name="eind" placeholder="Eind Tijd"><br>
+            </div>
+            <div class="form-group">
+                <label for="zaal">Zaal:    </label>  
+                <input type="number"  name="zaal" class="form-control" placeholder="Zaal"><br>
+            </div>
+            <p>Speciaal Evenement id nog toevoegen</p>
+            <input type="submit" class="btn btn-default" name="Submit"> 
+    </form>
+</div>
+
+</body>

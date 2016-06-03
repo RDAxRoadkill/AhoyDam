@@ -1,0 +1,49 @@
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+         $('#aantal').on('change',function(){
+            console.log('dis');
+            var totaalaantal = $('#prijspp').val() * $('#aantal').val();
+            totaalaantal = Math.round(totaalaantal * 100) / 100);
+            $('#totalprijs').html( totaalaantal);
+        }) 
+    })
+</script>
+<h3>Betaal uw bestelling!</h3>
+<!--
+Bestelling:
+Kaarten INT
+bestellingNummer INT
+bestellingDatum DATE
+kaartenGeldig BOOLEAN
+
+OptredenRegel:
+idOptreden INT - selecteren via artiest of naam concert (?)
+bestellingNummer
+
+Tickets:
+idTickets
+
+BestellingRegel:
+bestellingen INT
+idKlant INT (idGebruiker)
+-->
+<body>
+    <div class ="container">
+        <input type="number" name="aantal" id="aantal" value="1">
+        <input type="number" id="prijspp" style="display:none;" value="4.20">
+        <span id="prijs">4.20</span>
+         <span id="totalprijs">4.20</span>
+        <form action="/newPayment" method="post">
+            <div CLASS="span4"> MeemPrijs: {12.60} </div>
+            <p>Aantal Kaarten: </p><select id="aantalKaarten" name="aantalKaarten">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                </select>
+            <div CLASS="span4"> Prijs: {{ShowPrijs.prijs}} </div> 
+            <input type="submit" class="btn btn-default" value="Betaal Tickets" name="Submit"> 
+        </form>
+    </div>
+</body>

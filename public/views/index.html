@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
-    <title>Manifesto Overvecht</title>
+    <title>Ahoy Dam</title>
 
     <!-- Stylesheets -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,15 +32,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-
-        <a class="navbar-brand" href="#/home"><img src="../images/logo/logo.png " style="margin-top:-18px;"></span></a>
+        <div class="site-wrapper">
+            <a class="navbar-brand" href="http://localhost:8000/"><img src="../image/rotterdam-ahoy-logo.png" style="    width: 80%;"></span></a>
+        </div>
     </div>
     <div class="headercontainer">
         <div class="headerbuttons">
             <a class="btn btn-default" href="#" role="button">Bereik ons</a>
-            <a class="btn btn-default" href="#" role="button">Schrijf je in</a>
+            <a class="btn btn-default" href="#/inschrijven" role="button">Schrijf je in</a>
             <a class="btn btn-default" href="#/login" role="button">Login</a>
             <a class="btn btn-default" href="#/registreren" role="button">Registreren</a>
+            <a class="btn btn-default" href="#/admin" role="button">Backend</a>
         </div>
         <div class="headerflags">
             <a href="#">Nederlands</a>
@@ -52,16 +54,9 @@
         <ul class="nav navbar-nav">
             <!-- Drop down might need changes to onHover -->
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#/agendaList" class="dropdown-toggle" data-toggle="dropdown">
                     Agenda
-                    <b class="caret"></b><!-- caret = driekhoek -->
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a ui-sref="agenda">Agenda</a></li>
-                    <li class="divider"></li>
-                    <li><a ui-sref="addUser">Add User</a></li>
-                </ul>
-
             </li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -93,14 +88,34 @@
             </li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Concerten
+                    Functies
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="#/addConcert">Concert aanmaken</a></li>
+                    <li><a href="#/addRol">Rol aanmaken</a></li>
+                    <li><a href="#/GebruikerRol">Rol aan gebruiker toevoegen</a></li>
+                    <li><a href="#/addArtiest">Artiest toevoegen</a></li>
+                    <li><a href="#/addGenre">Genre toevoegen</a></li>
+                    <li><a href="#/addZaal">Zaal toevoegen</a></li>
+                    <li><a href="#/addCategorie">Categorie toevoegen</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#/addSpeciaalEvenement">Speciaal Evenement toevoegen</a></li>
+                    <li><a href="#/addOnderhoud">Onderhoud toevoegen</a></li>
+                    <li><a href="#/addVerbouwing">Verbouwing toevoegen</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#/addAgendaPunt">Agenda-punt toevoegen</a></li>
+                    <li><a href="#/agendaList">Agenda Lijst</a></li>
+                    <li><a href="#/agendaBackend">Agenda Backend Lijst</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#/addBestelling">Bestelling plaatsen</a></li>
                 </ul>
             </li>
-
+            <li class="dropdown">
+            <a href="#/contact" class="dropdown-toggle" data-toggle="dropdown">
+                    Contact
+                </a>
+            </li>
         </ul>
         </div>
     </div>
@@ -117,7 +132,7 @@
         <p class="footer-content">
             <a href="#">Wij zijn Rotterdam Ahoy</a>
             <a href="#">Ons verhaal</a>
-            <a href="#">Werlem bij Ahoy</a>
+            <a href="#">Werken bij Ahoy</a>
             <a href="#">Rotterdam Ahoy organiseert</a>
             <a href="#">Partners</a>
             <a href="#">Vervoer & Route</a>
@@ -149,6 +164,19 @@
             <a href="#">Disclaimer</a>
         </p>
 
+    </div>
+</footer>
+<footer class ="footer-partners">
+    <div class="site-wrapper">
+        <img src="../image/logo-aeg-facilities.png"  href="#">
+        <img src="../image/aipc-member.png"  href="#">
+        <img src="../image/logo-european-arenas-association.png"  href="#">
+        <img src="../image/logo-clcvecta.png"  href="#">
+        <img src="../image/icca-member.png"  href="#">
+        <img src="../image/mpi-member.png"  href="#">
+        <img src="../image/nbtc-marketing.png"  href="#">
+        <img src="../image/rotterdam-partners.png"  href="#">
+        <img src="../image/ufi_member.png"  href="#">
     </div>
 </footer>
 </body>

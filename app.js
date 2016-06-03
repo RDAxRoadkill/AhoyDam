@@ -4,17 +4,28 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+//Sesions
 var session = require('express-session');
+var memcached = require('connect-memcached')(session);
+var cookieStore = new memcached({host: "localhost:8000"});
+var flash = require('connect-flash');
 
 var app = express();
 
 var port = process.env.PORT || 3000;
 
 //Session test
-//app.engine('html', require('ejs'),renderFile);
+var sess = {
+    secret: "Geheim",
+    saveUninitialized: true,
+    resave: true,
+    store: cookieStore,
+    cookie: {maxAge: 60000}
+}
 
 //configure
-app.set('views', path.join(__dirname, 'public/views'));
+app.set('views', path.join(__dirname + 'public/views' ));
+app.set('view engine', 'jade');
 
 
 //middleware
@@ -24,6 +35,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(session({secret: '123', cookie: {maxAge: 60000}, resave: true, saveUninitialized: true}));
+app.use(flash());
 app.use(express.static(path.join(__dirname,'/public')));
 app.use('/bower_components', express.static(path.join(__dirname,'/bower_components')));
 
